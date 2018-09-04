@@ -1,6 +1,6 @@
-package com.demo.myretail.controller.service;
+package com.demo.myretail.service;
 
-import com.demo.myretail.controller.dao.ProductRepository;
+import com.demo.myretail.dao.ProductRepository;
 import com.demo.myretail.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

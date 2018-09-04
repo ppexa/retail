@@ -1,6 +1,6 @@
 package com.demo.myretail;
 
-import com.demo.myretail.controller.dao.ProductRepository;
+import com.demo.myretail.dao.ProductRepository;
 import com.demo.myretail.domain.CurrentPrice;
 import com.demo.myretail.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;

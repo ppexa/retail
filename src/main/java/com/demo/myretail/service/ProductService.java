@@ -1,4 +1,4 @@
-package com.demo.myretail.controller.service;
+package com.demo.myretail.service;
 
 import com.demo.myretail.domain.Product;
 

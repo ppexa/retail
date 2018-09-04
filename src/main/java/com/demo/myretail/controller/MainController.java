@@ -1,6 +1,6 @@
 package com.demo.myretail.controller;
 
-import com.demo.myretail.controller.service.ProductService;
+import com.demo.myretail.service.ProductService;
 import com.demo.myretail.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

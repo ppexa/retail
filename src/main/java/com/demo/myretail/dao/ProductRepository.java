@@ -1,4 +1,4 @@
-package com.demo.myretail.controller.dao;
+package com.demo.myretail.dao;
 
 import com.demo.myretail.domain.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
