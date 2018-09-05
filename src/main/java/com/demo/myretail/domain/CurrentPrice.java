@@ -11,7 +11,7 @@ import lombok.ToString;
 @Setter
 public class CurrentPrice {
 
-	private Double value;
+	private String price;
 	private String currencyCode;
 
 }

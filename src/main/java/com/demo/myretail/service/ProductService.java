@@ -15,6 +15,6 @@ public interface ProductService {
 
 	void modifyProductById(Product product);
 
-	void createProduct(Product product);
+	void createProduct(String name, String price, String currency);
 
 }

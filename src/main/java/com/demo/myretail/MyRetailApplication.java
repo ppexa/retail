@@ -21,7 +21,7 @@ public class MyRetailApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		productRepository.deleteAll();
-		productRepository.save(new Product("title", new CurrentPrice(12.90, "USD")));
+		productRepository.save(new Product("Example", new CurrentPrice("19.99", "USD")));
 
 		System.out.println(productRepository.findAll());
 	}

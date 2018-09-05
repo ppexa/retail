@@ -1,6 +1,7 @@
 package com.demo.myretail.service;
 
 import com.demo.myretail.dao.ProductRepository;
+import com.demo.myretail.domain.CurrentPrice;
 import com.demo.myretail.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -35,7 +36,9 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public void createProduct(Product product) {
-		productRepository.save(product);
+	public void createProduct(String name, String price, String currency) {
+//		Product product = new Product(name, new CurrentPrice(price, currency));
+
+		productRepository.save(new Product(name, new CurrentPrice(price, currency)));
 	}
 }
