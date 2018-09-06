@@ -38,6 +38,7 @@ public class ProductServiceImpl implements ProductService {
 	private final String OUTDOOR = "OUTDOOR";
 	private final String APPAREL = "APPAREL";
 	private final String HOME = "HOME";
+	private final String MISC = "MISC";
 
 	@Override
 	public List<Product> getAllProducts() {
@@ -102,7 +103,7 @@ public class ProductServiceImpl implements ProductService {
 			case HOME:
 				idPrefix = homePrefix;
 				break;
-			default:
+			case MISC:
 				idPrefix = miscPrefix;
 		}
 		return idPrefix;

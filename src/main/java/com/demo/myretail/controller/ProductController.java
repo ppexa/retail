@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/products")
-public class ApiProductController {
+public class ProductController {
 
 	@Autowired
 	private ProductService productService;
