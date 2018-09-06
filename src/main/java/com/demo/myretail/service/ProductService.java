@@ -13,8 +13,8 @@ public interface ProductService {
 
 	void deleteProductById(String id);
 
-	void modifyProductById(Product product);
+	void modifyProductById(String id, String name, String price, String currency, String department);
 
-	void createProduct(String name, String price, String currency);
+	void createProduct(String name, String price, String currency, String department);
 
 }

@@ -1,25 +1,18 @@
 package com.demo.myretail.domain;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-import org.springframework.data.annotation.Id;
+import lombok.*;
 
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
 public class Product {
 
-	@Id
 	private String id;
 	private String name;
 	private CurrentPrice currentPrice;
-
-	public Product(String name, CurrentPrice currentPrice) {
-		this.name = name;
-		this.currentPrice = currentPrice;
-	}
+	private String department;
 
 }

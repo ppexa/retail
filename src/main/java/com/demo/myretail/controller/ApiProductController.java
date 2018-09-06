@@ -16,38 +16,54 @@ public class ApiProductController {
 	@Autowired
 	private ProductService productService;
 
-	@RequestMapping()
+	@RequestMapping("/")
 	public @ResponseBody
 	List<Product> products() {
 		return productService.getAllProducts();
+
 	}
 
-	@RequestMapping("/{prodId}")
+	@RequestMapping("/{productId}")
 	public @ResponseBody
-	Product product(@PathVariable("prodId") String id) {
+	Product product(@PathVariable("productId") String id) {
 		Optional<Product> optionalProduct = productService.getProductById(id);
-		return optionalProduct.isPresent() ? optionalProduct.get(): new Product();
+		return optionalProduct.isPresent() ? optionalProduct.get() : new Product();
 	}
 
-	@RequestMapping("/delete/{prodId}")
+	@RequestMapping("/delete/{productId}")
 	public @ResponseBody
-	void delete(@PathVariable("prodId") String id) {
+	void delete(@PathVariable("productId") String id) {
 		productService.deleteProductById(id);
 	}
 
-//	@RequestMapping("/update/{prodId}")
-//	public @ResponseBody
-//	void update(@PathVariable("prodId") String id) {
-//
-//		productService.modifyProductById(id);
-//	}
+	@RequestMapping("/update")
+	public @ResponseBody
+	void update(@RequestParam(value = "productId") String id,
+				@RequestParam(value = "name") String name,
+				@RequestParam(value = "price") String price,
+				@RequestParam(value = "currency") String currency,
+				@RequestParam(value = "department", required = false, defaultValue = "misc") String department) {
+		productService.modifyProductById(id, name, price, currency, department);
+	}
 
 	@RequestMapping("/create")
 	public @ResponseBody
-	List<Product> create(@RequestParam(value="name") String name, @RequestParam(value="price") String price,
-				@RequestParam(value="currency") String currencyCode) {
-		productService.createProduct(name, price, currencyCode);
-		return products();
+	void create(@RequestParam(value = "name") String name,
+				@RequestParam(value = "price") String price,
+				@RequestParam(value = "currency") String currency,
+				@RequestParam(value = "department", required = false, defaultValue = "misc") String department) {
+		productService.createProduct(name, price, currency, department);
+	}
+
+	@RequestMapping("/create/form")
+	public String createForm() {
+		return "index";
+	}
+
+	@RequestMapping(value = "/create/createFromForm", method = RequestMethod.POST)
+	public String createFromForm(String name, String price, String currency, String department) {
+		productService.createProduct(name, price, currency, department);
+		return "redirect:/products/create/form";
 	}
 
 }

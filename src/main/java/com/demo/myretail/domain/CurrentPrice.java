@@ -1,17 +1,15 @@
 package com.demo.myretail.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 @AllArgsConstructor
 @ToString
 @Getter
 @Setter
+@EqualsAndHashCode
 public class CurrentPrice {
 
 	private String price;
-	private String currencyCode;
+	private String currency;
 
 }

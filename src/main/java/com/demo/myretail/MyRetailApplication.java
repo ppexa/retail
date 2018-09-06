@@ -1,8 +1,6 @@
 package com.demo.myretail;
 
 import com.demo.myretail.dao.ProductRepository;
-import com.demo.myretail.domain.CurrentPrice;
-import com.demo.myretail.domain.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -21,8 +19,5 @@ public class MyRetailApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		productRepository.deleteAll();
-		productRepository.save(new Product("Example", new CurrentPrice("19.99", "USD")));
-
-		System.out.println(productRepository.findAll());
 	}
 }
